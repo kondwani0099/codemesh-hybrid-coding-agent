@@ -1,0 +1,34 @@
+# Model Configuration
+models:
+  analyzer:
+    provider: ollama
+    model: gemma4:4b
+
+  summarizer:
+    provider: ollama
+    model: gemma4:4b
+
+  local_coder:
+    provider: ollama
+    model: qwen-coder
+
+  reviewer:
+    provider: ollama
+    model: gemma4:4b
+
+  planner:
+    provider: cloud
+    model: configurable
+
+  implementer:
+    provider: cloud
+    model: configurable
+
+  debugger:
+    provider: cloud
+    model: configurable
+
+# Routing policy
+routing:
+  simple_tasks: local
+  complex_tasks: cloud

@@ -1,0 +1,30 @@
+# Cost Estimation Configuration
+# Token-to-cost rates per provider/model (configurable).
+costs:
+  providers:
+    ollama:
+      cost_per_1k_input: 0.0
+      cost_per_1k_output: 0.0
+      local: true
+
+    openai:
+      cost_per_1k_input: 0.01
+      cost_per_1k_output: 0.01
+      local: false
+
+    anthropic:
+      cost_per_1k_input: 0.01
+      cost_per_1k_output: 0.03
+      local: false
+
+    openrouter:
+      cost_per_1k_input: 0.0
+      cost_per_1k_output: 0.0
+      local: false
+
+# Reporting
+reporting:
+  track_local_tokens: true
+  track_cloud_tokens: true
+  estimated_full_cloud_baseline: true
+  show_savings_percentage: true

@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Validate CodeMesh",
+      "type": "shell",
+      "command": "python scripts/validate-agents.py && python scripts/validate-skills.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Validate Agents",
+      "type": "shell",
+      "command": "python scripts/validate-agents.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Validate Skills",
+      "type": "shell",
+      "command": "python scripts/validate-skills.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate Index",
+      "type": "shell",
+      "command": "python scripts/generate-index.py --write",
+      "problemMatcher": []
+    }
+  ]
+}

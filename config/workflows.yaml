@@ -1,0 +1,41 @@
+# Workflow Registry Configuration
+workflows:
+  feature-development:
+    file: .github/workflows/feature-development.md
+    description: Implement a new feature end-to-end.
+
+  bug-fix:
+    file: .github/workflows/bug-fix.md
+    description: Diagnose and fix a reported bug.
+
+  refactoring:
+    file: .github/workflows/refactoring.md
+    description: Improve code structure without behavior change.
+
+  security-audit:
+    file: .github/workflows/security-audit.md
+    description: Review the codebase for security issues.
+
+  performance-investigation:
+    file: .github/workflows/performance-investigation.md
+    description: Investigate and fix a performance problem.
+
+  api-change:
+    file: .github/workflows/api-change.md
+    description: Change or add an API endpoint safely.
+
+  frontend-change:
+    file: .github/workflows/frontend-change.md
+    description: Implement a frontend-only change.
+
+  backend-change:
+    file: .github/workflows/backend-change.md
+    description: Implement a backend-only change.
+
+  database-change:
+    file: .github/workflows/database-change.md
+    description: Change the database schema safely.
+
+  emergency-fix:
+    file: .github/workflows/emergency-fix.md
+    description: Handle a critical, time-sensitive issue.

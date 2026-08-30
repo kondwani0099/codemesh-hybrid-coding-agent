@@ -1,0 +1,67 @@
+# Agent Registry Configuration
+agents:
+  orchestrator:
+    file: .github/agents/codemesh.agent.md
+
+  workflow:
+    file: .github/agents/workflow.agent.md
+
+  product:
+    file: .github/agents/product.agent.md
+
+  roadmap:
+    file: .github/agents/roadmap.agent.md
+
+  analyst:
+    file: .github/agents/analyst.agent.md
+
+  planner:
+    file: .github/agents/planner.agent.md
+
+  architect:
+    file: .github/agents/architect.agent.md
+
+  critic:
+    file: .github/agents/critic.agent.md
+
+  frontend:
+    vue:
+      file: .github/agents/frontend/vue.agent.md
+    react:
+      file: .github/agents/frontend/react.agent.md
+    reviewer:
+      file: .github/agents/frontend/frontend-reviewer.agent.md
+
+  backend:
+    python:
+      file: .github/agents/backend/python.agent.md
+    fastapi:
+      file: .github/agents/backend/fastapi.agent.md
+    node:
+      file: .github/agents/backend/node.agent.md
+    reviewer:
+      file: .github/agents/backend/backend-reviewer.agent.md
+
+  data:
+    database:
+      file: .github/agents/data/database.agent.md
+    api_contract:
+      file: .github/agents/data/api-contract.agent.md
+
+  quality:
+    security:
+      file: .github/agents/quality/security.agent.md
+    code_reviewer:
+      file: .github/agents/quality/code-reviewer.agent.md
+    qa:
+      file: .github/agents/quality/qa.agent.md
+    uat:
+      file: .github/agents/quality/uat.agent.md
+
+  delivery:
+    devops:
+      file: .github/agents/delivery/devops.agent.md
+    documentation:
+      file: .github/agents/delivery/documentation.agent.md
+    retrospective:
+      file: .github/agents/delivery/retrospective.agent.md

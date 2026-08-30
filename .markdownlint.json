@@ -1,0 +1,16 @@
+{
+  "default": true,
+  "line_length": 100,
+  "no-inline-html": {
+    "allowed_elements": ["br", "details", "summary"]
+  },
+  "MD013": {
+    "line_length": 100
+  },
+  "MD024": {
+    "siblings_only": true
+  },
+  "MD033": {
+    "allowed_elements": ["br", "details", "summary"]
+  }
+}

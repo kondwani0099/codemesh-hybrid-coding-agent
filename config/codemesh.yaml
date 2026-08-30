@@ -1,0 +1,36 @@
+# CodeMesh Main Configuration
+codemesh:
+  version: 1
+
+  # Context management
+  context:
+    enabled: true
+    max_context_tokens: 30000
+
+  # Model routing
+  model_routing:
+    enabled: true
+
+  # Memory / caching
+  memory:
+    enabled: true
+
+  # Security
+  security:
+    require_approval: true
+    excluded_patterns:
+      - ".env*"
+      - "*.pem"
+      - "*.key"
+      - "secrets/**"
+      - "credentials/**"
+
+  # Limits
+  limits:
+    max_fix_attempts: 3
+
+  # Repository
+  repository:
+    cache_dir: .codemesh
+    index:
+      embeddings: true
