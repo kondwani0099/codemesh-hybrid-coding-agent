@@ -12,15 +12,15 @@ schema integrity:
 
 ### Linux / macOS / WSL
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.0.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.0.1/install.sh | bash
 ```
 
 ### Windows PowerShell
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.0.0/install.ps1 | iex
+Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.0.1/install.ps1 | iex
 ```
 
-The installer downloads the CodeMesh framework at `v1.0.0`, snapshots any
+The installer downloads the CodeMesh framework at `v1.0.1`, snapshots any
 existing CodeMesh files into `<project>/.codemesh/backups/<timestamp>/`, then
 copies `.github/agents`, `.github/skills`, `.github/workflows`,
 `.github/templates`, `.github/instructions` and a per-project `config/` into
@@ -48,7 +48,7 @@ Then open VS Code → Copilot Chat → select a CodeMesh agent (e.g. `codemesh`,
 `planner`, `vue`, `python`, `qa`) and start a workflow. See
 [`docs/getting-started/first-workflow.md`](docs/getting-started/first-workflow.md).
 
-> **Version:** 1.0.0 — reproducible installer (`install.sh` / `install.ps1`).
+> **Version:** 1.0.1 — reproducible installer (`install.sh` / `install.ps1`).
 
 ## 1. Project Overview
 

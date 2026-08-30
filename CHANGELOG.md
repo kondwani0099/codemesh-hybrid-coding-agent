@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-08-30
+
+### Fixed
+- Re-tagged the installer as `v1.0.1`. The `v1.0.0` raw `install.ps1` was stuck on a
+  stale GitHub raw-CDN cache (still serving the pre-fix script that assumed the
+  archive folder was named `<repo>-v<tag>`).
+- All one-liner URLs and default `CODEMESH_TAG` now point to `v1.0.1`, whose raw
+  files are freshly cached and include the dynamic source-directory lookup.
+
 ## [1.0.0] - 2026-08-30
 
 ### Added
