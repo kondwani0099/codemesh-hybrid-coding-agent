@@ -1,4 +1,4 @@
-# codemesh-hybrid-coding-agent
+
 
 # CodeMesh — Hybrid Coding Agent Team
 
@@ -6,25 +6,49 @@
 
 ## Quick Start
 
+Bootstrap any project with the **reproducible one-liner installer** — it safely
+copies the managed files, automatically backs up existing states, and validates
+schema integrity:
+
+### Linux / macOS / WSL
 ```bash
-# 1. Install CodeMesh into your project (Windows)
-scripts/install.ps1 -Target "C:\path\to\your\project"
+curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.0.0/install.sh | bash
+```
 
-# or (Linux/macOS)
-./scripts/install.sh /path/to/your/project
+### Windows PowerShell
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.0.0/install.ps1 | iex
+```
 
-# 2. Validate the framework
+The installer downloads the CodeMesh framework at `v1.0.0`, snapshots any
+existing CodeMesh files into `<project>/.codemesh/backups/<timestamp>/`, then
+copies `.github/agents`, `.github/skills`, `.github/workflows`,
+`.github/templates`, `.github/instructions` and a per-project `config/` into
+your project — and finally validates the installed agent/skill schema.
+
+> **Note**: Tune your per-project models and costs in
+> `<project>/.codemesh/config/models.yaml` (and `costs.yaml`) after install.
+> To overwrite existing CodeMesh files, re-run with `CODEMESH_FORCE=1`
+> (PowerShell: `$env:CODEMESH_FORCE = "1"`).
+
+### Install from a local clone (optional)
+
+```bash
+# 1. Install CodeMesh into a project (run from this repo)
+python scripts/setup.py /path/to/your/project
+python scripts/setup.py ../my-app --force    # overwrite existing CodeMesh files
+
+# 2. Validate the framework (optional)
 python scripts/validate-agents.py
 python scripts/validate-skills.py
 python scripts/check-links.py
-
-# 3. Generate agent/skill/workflow indexes
-python scripts/generate-index.py --write
 ```
 
 Then open VS Code → Copilot Chat → select a CodeMesh agent (e.g. `codemesh`,
 `planner`, `vue`, `python`, `qa`) and start a workflow. See
 [`docs/getting-started/first-workflow.md`](docs/getting-started/first-workflow.md).
+
+> **Version:** 1.0.0 — reproducible installer (`install.sh` / `install.ps1`).
 
 ## 1. Project Overview
 
