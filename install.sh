@@ -29,7 +29,7 @@ ARCHIVE_URL="https://github.com/${CODEMESH_OWNER}/${CODEMESH_REPO}/archive/refs/
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "$TMP_DIR"' EXIT
 
-echo "CodeMesh Reproducible Installer v${CODEMESH_TAG}"
+echo "CodeMesh Reproducible Installer ${CODEMESH_TAG}"
 echo "Downloading CodeMesh ${CODEMESH_TAG} from ${CODEMESH_OWNER}/${CODEMESH_REPO} ..."
 
 if command -v curl >/dev/null 2>&1; then
@@ -43,9 +43,18 @@ fi
 
 echo "Extracting..."
 tar -xzf "$TMP_DIR/codemesh.tar.gz" -C "$TMP_DIR"
-SRC="$TMP_DIR/${CODEMESH_REPO}-${CODEMESH_TAG}"
 
-if [ ! -d "$SRC/.github" ]; then
+# Locate the extracted framework directory (GitHub may name the archive
+# folder <repo>-<tag> with or without the leading 'v' on the tag).
+SRC=""
+for d in "$TMP_DIR"/*/; do
+  if [ -d "${d}.github" ]; then
+    SRC="${d%/}"
+    break
+  fi
+done
+
+if [ -z "$SRC" ]; then
   echo "Error: downloaded archive does not contain the CodeMesh framework." >&2
   exit 1
 fi

@@ -30,15 +30,24 @@ $zipPath = Join-Path $tmpDir "codemesh.zip"
 
 New-Item -ItemType Directory -Force -Path $tmpDir | Out-Null
 
-Write-Host "CodeMesh Reproducible Installer v$tag" -ForegroundColor Cyan
+Write-Host "CodeMesh Reproducible Installer $tag" -ForegroundColor Cyan
 Write-Host "Downloading CodeMesh $tag from $owner/$repo ..."
 Invoke-WebRequest -Uri $zipUrl -OutFile $zipPath -UseBasicParsing
 
 Write-Host "Extracting..."
 Expand-Archive -Path $zipPath -DestinationPath $tmpDir -Force
 
-$src = Join-Path $tmpDir "$repo-$tag"
-if (-not (Test-Path (Join-Path $src ".github"))) {
+# Locate the extracted framework directory (GitHub may name the archive
+# folder <repo>-<tag> with or without the leading 'v' on the tag).
+$src = $null
+foreach ($d in (Get-ChildItem -Path $tmpDir -Directory)) {
+    if (Test-Path (Join-Path $d.FullName ".github")) {
+        $src = $d.FullName
+        break
+    }
+}
+
+if (-not $src) {
     Remove-Item -Recurse -Force $tmpDir -ErrorAction SilentlyContinue
     throw "Downloaded archive does not contain the CodeMesh framework."
 }
