@@ -13,7 +13,10 @@ agents:
     file: .github/agents/roadmap.agent.md
 
   analyst:
-    file: .github/agents/analyst.agent.md
+    general:
+      file: .github/agents/analyst.agent.md
+    knowledge_graph:
+      file: .github/agents/analyst/knowledge-graph.agent.md
 
   planner:
     file: .github/agents/planner.agent.md
@@ -67,5 +70,7 @@ agents:
       file: .github/agents/delivery/devops.agent.md
     documentation:
       file: .github/agents/delivery/documentation.agent.md
+    graphify_setup:
+      file: .github/agents/delivery/graphify-setup.agent.md
     retrospective:
       file: .github/agents/delivery/retrospective.agent.md

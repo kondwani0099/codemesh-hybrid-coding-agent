@@ -1,5 +1,6 @@
 # Agent Index
 
+- [knowledge-graph.agent.md](../.github/agents/analyst/knowledge-graph.agent.md)
 - [analyst.agent.md](../.github/agents/analyst.agent.md)
 - [architect.agent.md](../.github/agents/architect.agent.md)
 - [backend-reviewer.agent.md](../.github/agents/backend/backend-reviewer.agent.md)
@@ -12,6 +13,7 @@
 - [database.agent.md](../.github/agents/data/database.agent.md)
 - [devops.agent.md](../.github/agents/delivery/devops.agent.md)
 - [documentation.agent.md](../.github/agents/delivery/documentation.agent.md)
+- [graphify-setup.agent.md](../.github/agents/delivery/graphify-setup.agent.md)
 - [retrospective.agent.md](../.github/agents/delivery/retrospective.agent.md)
 - [frontend-reviewer.agent.md](../.github/agents/frontend/frontend-reviewer.agent.md)
 - [react.agent.md](../.github/agents/frontend/react.agent.md)

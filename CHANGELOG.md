@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-09-03
+
+### Added
+- **Graphify Persistent Knowledge Graph Integration** (`AGENTS.md`, `.github/skills/graphify/`): Complete project knowledge graph instructions, query optimization guidelines, and operating rules.
+- **Graphify Setup Agent** (`.github/agents/delivery/graphify-setup.agent.md`): Handles Graphify installation, project hooks, initial extractions, incremental syncs, and crawlable wiki generation.
+- **Knowledge Graph Agent** (`.github/agents/analyst/knowledge-graph.agent.md`): Token-saving navigator specializing in answering architectural questions, tracing dependency paths (`graphify path`), and providing compact context summaries.
+- **Graphify Skill** (`.github/skills/graphify/SKILL.md`, `setup.md`, `token-optimization.md`): Reusable knowledge graph workflows, budget-bounded queries (`--budget`), and token-saving rules.
+
 ## [1.1.0] - 2026-09-03
 
 ### Added

@@ -1,11 +1,11 @@
 # CodeMesh — Reproducible Installer (Windows PowerShell)
 #
 # One-liner usage:
-#   Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.1.0/install.ps1 | iex
+#   Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.2.0/install.ps1 | iex
 #
 # Optional environment variables:
 #   CODEMESH_TARGET      Project directory to install into  (default: current dir)
-#   CODEMESH_TAG         Version tag to install             (default: v1.1.0)
+#   CODEMESH_TAG         Version tag to install             (default: v1.2.0)
 #   CODEMESH_FORCE=1     Overwrite existing CodeMesh files
 #   CODEMESH_NO_BACKUP=1 Do not back up existing states
 #
@@ -21,7 +21,7 @@ $ErrorActionPreference = "Stop"
 
 $owner = if ($env:CODEMESH_OWNER) { $env:CODEMESH_OWNER } else { "kondwani0099" }
 $repo = if ($env:CODEMESH_REPO) { $env:CODEMESH_REPO } else { "codemesh-hybrid-coding-agent" }
-$tag = if ($env:CODEMESH_TAG) { $env:CODEMESH_TAG } else { "v1.1.0" }
+$tag = if ($env:CODEMESH_TAG) { $env:CODEMESH_TAG } else { "v1.2.0" }
 $target = if ($env:CODEMESH_TARGET) { $env:CODEMESH_TARGET } else { (Get-Location).Path }
 
 $zipUrl = "https://github.com/$owner/$repo/archive/refs/tags/$tag.zip"

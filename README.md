@@ -12,18 +12,18 @@ schema integrity:
 
 ### Linux / macOS / WSL
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.1.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.2.0/install.sh | bash
 ```
 
 ### Windows PowerShell
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.1.0/install.ps1 | iex
+Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.2.0/install.ps1 | iex
 ```
 
-The installer downloads the CodeMesh framework at `v1.1.0`, snapshots any
+The installer downloads the CodeMesh framework at `v1.2.0`, snapshots any
 existing CodeMesh files into `<project>/.codemesh/backups/<timestamp>/`, then
 copies `.github/agents`, `.github/skills`, `.github/workflows`,
-`.github/templates`, `.github/instructions` and a per-project `config/` into
+`.github/templates`, `.github/instructions`, root `AGENTS.md` rules, and a per-project `config/` into
 your project — and finally validates the installed agent/skill schema.
 
 > **Note**: Tune your per-project models and costs in
@@ -45,10 +45,10 @@ python scripts/check-links.py
 ```
 
 Then open VS Code → Copilot Chat → select a CodeMesh agent (e.g. `codemesh`,
-`planner`, `vue`, `python`, `qa`, `tester`, `security-patching`) and start a workflow. See
+`planner`, `knowledge-graph`, `vue`, `python`, `qa`, `tester`, `security-patching`, `graphify-setup`) and start a workflow. See
 [`docs/getting-started/first-workflow.md`](docs/getting-started/first-workflow.md).
 
-> **Version:** 1.1.0 — reproducible installer (`install.sh` / `install.ps1`).
+> **Version:** 1.2.0 — reproducible installer (`install.sh` / `install.ps1`).
 
 ## 1. Project Overview
 
@@ -230,33 +230,47 @@ Optional Cloud APIs
 
 CodeMesh should initially contain these agents.
 
-| Agent         | Responsibility                     |
-| ------------- | ---------------------------------- |
-| Workflow      | Coordinates the overall task       |
-| Product       | Defines business requirements      |
-| Planner       | Creates implementation plan        |
-| Analyst       | Investigates technical questions   |
-| Architect     | Designs system-level changes       |
-| Vue           | Vue frontend development           |
-| React         | React frontend development         |
-| Python        | Python/FastAPI backend development |
-| Database      | Database/schema/migration work     |
-| API           | API contract and integration work  |
-| Security      | Security analysis                  |
-| Critic        | Challenges plans and assumptions   |
-| Implementer   | Coordinates implementation         |
-| Code Reviewer | Reviews implementation             |
-| QA            | Testing and verification           |
-| UAT           | Business acceptance                |
-| DevOps        | Build/deployment/release           |
-| Retrospective | Captures lessons                   |
-| Documentation | Technical documentation            |
+| Agent             | Responsibility                                                  |
+| ----------------- | --------------------------------------------------------------- |
+| Workflow          | Coordinates the overall task                                    |
+| Product           | Defines business requirements                                   |
+| Planner           | Creates implementation plan                                     |
+| Analyst           | Investigates technical questions                                |
+| Knowledge Graph   | Navigates codebase graph & saves context tokens                 |
+| Architect         | Designs system-level changes                                    |
+| Vue               | Vue frontend development                                        |
+| React             | React frontend development                                      |
+| Python            | Python/FastAPI backend development                              |
+| Database          | Database/schema/migration work                                  |
+| API               | API contract and integration work                               |
+| Security          | Security review and OWASP audits                                |
+| Security Patching | Applies atomic, non-breaking security patches & CVE remediations|
+| Critic            | Challenges plans and assumptions                                |
+| Implementer       | Coordinates implementation                                      |
+| Code Reviewer     | Reviews code quality and structure                              |
+| Tester            | Hunts for bugs, unhandled exceptions & edge-case errors         |
+| QA                | Testing, verification, and fix loop validation                  |
+| UAT               | Business acceptance verification                                |
+| DevOps            | Build/deployment/release                                        |
+| Graphify Setup    | Initializes, syncs & configures Graphify knowledge graphs       |
+| Retrospective     | Captures lessons learned                                        |
+| Documentation     | Technical documentation                                         |
 
 Agents should be specialized rather than attempting to do everything.
 
 ---
 
-# 6. Agent Separation of Concerns
+# 6. Persistent Knowledge Graph (Graphify) & Token Optimization
+
+CodeMesh integrates **Graphify** as the project's persistent knowledge graph (`AGENTS.md`) to drastically reduce LLM token usage and prevent reading unnecessary raw source files:
+
+* **`@knowledge-graph` agent**: Answers architecture questions, traces dependency paths (`graphify path "A" "B"`), and provides compact context summaries with explicit token budgets (`--budget 1500`).
+* **`@graphify-setup` agent**: Installs Graphify (`uv tool install graphifyy`), generates initial graphs (`graphify .`), keeps graphs in sync (`graphify . --update`), and builds crawlable wikis (`graphify . --wiki`).
+* **Graph-First Operating Rules**: Agents consult `graphify-out/` subgraphs before loading large files, adhering strictly to: `SOURCE CODE > TESTS > CONFIGURATION > GRAPHIFY INFERENCE`.
+
+---
+
+# 7. Agent Separation of Concerns
 
 Each agent must have a clearly defined responsibility.
 

@@ -2,11 +2,11 @@
 # CodeMesh — Reproducible Installer (Linux / macOS / WSL)
 #
 # One-liner usage:
-#   curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.1.0/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.2.0/install.sh | bash
 #
 # Optional environment variables:
 #   CODEMESH_TARGET   Project directory to install into  (default: current dir)
-#   CODEMESH_TAG      Version tag to install             (default: v1.1.0)
+#   CODEMESH_TAG      Version tag to install             (default: v1.2.0)
 #   CODEMESH_FORCE=1  Overwrite existing CodeMesh files
 #   CODEMESH_NO_BACKUP=1  Do not back up existing states
 #
@@ -22,7 +22,7 @@ set -euo pipefail
 
 CODEMESH_OWNER="${CODEMESH_OWNER:-kondwani0099}"
 CODEMESH_REPO="${CODEMESH_REPO:-codemesh-hybrid-coding-agent}"
-CODEMESH_TAG="${CODEMESH_TAG:-v1.1.0}"
+CODEMESH_TAG="${CODEMESH_TAG:-v1.2.0}"
 CODEMESH_TARGET="${CODEMESH_TARGET:-$PWD}"
 
 ARCHIVE_URL="https://github.com/${CODEMESH_OWNER}/${CODEMESH_REPO}/archive/refs/tags/${CODEMESH_TAG}.tar.gz"
