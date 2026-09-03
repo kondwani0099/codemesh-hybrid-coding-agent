@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CodeMesh Setup — v1.0.1
+"""CodeMesh Setup — v1.1.0
 
 Automatically pulls the CodeMesh agent-team framework into a target project so
 you can start using the agents right away.
@@ -31,7 +31,7 @@ import shutil
 import sys
 from pathlib import Path
 
-VERSION = "1.0.1"
+VERSION = "1.1.0"
 
 # The framework folders (relative to the CodeMesh repo root) that are installed
 # into the target project's .github/ directory.

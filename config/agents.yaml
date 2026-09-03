@@ -51,8 +51,12 @@ agents:
   quality:
     security:
       file: .github/agents/quality/security.agent.md
+    security_patching:
+      file: .github/agents/quality/security-patching.agent.md
     code_reviewer:
       file: .github/agents/quality/code-reviewer.agent.md
+    tester:
+      file: .github/agents/quality/tester.agent.md
     qa:
       file: .github/agents/quality/qa.agent.md
     uat:

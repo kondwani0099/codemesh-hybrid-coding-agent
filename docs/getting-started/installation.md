@@ -16,12 +16,12 @@ the install.
 
 #### Linux / macOS / WSL
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.0.1/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.1.0/install.sh | bash
 ```
 
 #### Windows PowerShell
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.0.1/install.ps1 | iex
+Set-ExecutionPolicy Bypass -Scope Process -Force; iwr -useb https://raw.githubusercontent.com/kondwani0099/codemesh-hybrid-coding-agent/v1.1.0/install.ps1 | iex
 ```
 
 Environment options:
@@ -29,7 +29,7 @@ Environment options:
 | Variable | Purpose | Default |
 |----------|---------|---------|
 | `CODEMESH_TARGET` | Project directory to install into | current dir |
-| `CODEMESH_TAG` | Version tag to install | `v1.0.1` |
+| `CODEMESH_TAG` | Version tag to install | `v1.1.0` |
 | `CODEMESH_FORCE=1` | Overwrite existing CodeMesh files | off |
 | `CODEMESH_NO_BACKUP=1` | Skip backing up existing states | off |
 

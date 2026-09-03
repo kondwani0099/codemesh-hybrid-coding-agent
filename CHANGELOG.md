@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-09-03
+
+### Added
+- **Security Patching Agent** (`.github/agents/quality/security-patching.agent.md`): Specializes in analyzing vulnerability reports, CVE alerts, and OWASP audit findings to formulate, apply, and verify targeted, non-breaking security patches.
+- **Tester Agent** (`.github/agents/quality/tester.agent.md`): Proactively discovers bugs, runtime errors, unhandled exceptions, and edge-case boundary failures with structured reproduction reporting.
+- **OWASP Remediation Knowledge** (`.github/skills/security/owasp.md`): Comprehensive coverage of OWASP Top 10 Web Application risks, OWASP API Security Top 10, and OWASP LLM Applications Top 10.
+- **Standard & Advanced Security Protocols** (`.github/skills/security/protocols.md`): TLS 1.3, CSP Level 3, HSTS, OAuth 2.1 with PKCE, JWT hardening, Zero-Trust mTLS, HMAC-SHA256 request signing, and rate limiting.
+- **Advanced Security Patching Techniques** (`.github/skills/security/patching-techniques.md`): Parameterized queries, BOLA/IDOR authorization fixes, Argon2id/AES-GCM crypto hardening, SSRF egress validation, and safe deserialization.
+- **Security Patching Workflow** (`.github/workflows/security-patching.md`): Structured flow from vulnerability triage to patching, QA regression testing, security verification, and release.
+
 ## [1.0.1] - 2026-08-30
 
 ### Fixed

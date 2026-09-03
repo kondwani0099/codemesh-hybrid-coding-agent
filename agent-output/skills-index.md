@@ -30,6 +30,8 @@
 - [troubleshooting.md](../.github/skills/ollama/troubleshooting.md)
 - [dependency-security.md](../.github/skills/security/dependency-security.md)
 - [owasp.md](../.github/skills/security/owasp.md)
+- [patching-techniques.md](../.github/skills/security/patching-techniques.md)
+- [protocols.md](../.github/skills/security/protocols.md)
 - [secrets.md](../.github/skills/security/secrets.md)
 - [SKILL.md](../.github/skills/security/SKILL.md)
 - [e2e-testing.md](../.github/skills/testing/e2e-testing.md)

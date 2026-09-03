@@ -10,3 +10,4 @@
 - [performance-investigation.md](../.github/workflows/performance-investigation.md)
 - [refactoring.md](../.github/workflows/refactoring.md)
 - [security-audit.md](../.github/workflows/security-audit.md)
+- [security-patching.md](../.github/workflows/security-patching.md)
